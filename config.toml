@@ -1,0 +1,34 @@
+baseurl = "https://mneilsworld.com"
+title = "Michael Neil"
+theme = "aerial"
+languageCode = "en-us"
+
+[params]
+  name = "Michael Neil"
+  about = "Full Stack Developer &nbsp;&bull;&nbsp; Technical Director"
+  copyright = "Michael Neil"
+  #Disable the scrolling background by entering any string for bg_scroll. Enable by leaving bg_scroll empty.
+  bg_scroll = ""
+  favicon = "favicon.ico"
+  email = "michael@mneilsworld.com"
+  latitude = "45.6188384"
+  longitude = "-122.3652182"
+  googleMapsApiKey = "AIzaSyCZbUcNSTY6pFn3rqxjFutWvUfTtB_KL1o"
+
+[[params.social]]
+  medium = "LinkedIn"
+  icon = "linkedin"
+  link = "https://www.linkedin.com/in/mneilsworld/"
+  target = "_blank"
+
+[[params.social]]
+  medium = "Github"
+  icon = "github"
+  link = "https://github.com/mneil"
+  target = "_blank"
+
+[[params.social]]
+  medium = "Email"
+  icon = "envelope-o"
+  link = "/contact"
+  target = "_self"
