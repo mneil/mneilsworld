@@ -12,3 +12,5 @@ hugo.exe
 .history
 
 # End of https://www.gitignore.io/api/hugo,visualstudiocode
+
+/dev
