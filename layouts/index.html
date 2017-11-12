@@ -20,7 +20,7 @@
     {{ end }}
 	</head>
 	<body class="loading">
-		<div id="wrapper">
+		<section id="wrapper">
 			<div id="bg" {{ with .Site.Params.bg_scroll}} class="no-scroll" {{end}}></div>
 			<div id="overlay"></div>
 			<div id="main">
@@ -39,10 +39,13 @@
 					</header>
           
 			</div>
-    </div>
-    <div class="contact">
+    </section>
+    <section class="about">
+      {{ partial "about.html" . }}
+    </section>
+    <section class="contact">
       {{ partial "contact.html" . }}
-    </div>
+    </section>
 		<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
 		<script>
 			window.onload = function() { document.body.className = ''; }

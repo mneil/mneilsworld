@@ -1,10 +1,31 @@
 html, body{
   width: 100%;
   height: 100%;
+  overflow-x: hidden;  
 }
 body{
-  overflow: auto;
-  overflow-x: hidden;
+  width: 100%;
+  overflow-y: auto;
+  font-size: 16px;
+}
+h3{
+  font-size: 1.75em;
+  font-weight: 600;
+  margin: 1em 0;
+  text-transform: uppercase;
+  border-bottom: solid 5px #38a7bb;
+  padding-bottom: .3em;
+}
+/* forms.less */
+label {
+  font-weight: normal;
+}
+nav ul{
+  margin-left: 0;
+}
+ul{
+  list-style: circle;
+  margin-left: 2em;
 }
 
 
@@ -12,6 +33,22 @@ body{
   position: absolute;
 }
 
+#overlay{
+  background-attachment: inherit;
+}
+
+#wrapper{
+  position: relative;
+  box-shadow: 0px 2px 3px rgba(0,0,0, 0.5);
+}
+
+.about{
+  color: #222;
+  margin: 4em 2em;
+}
+.about ul{
+  margin: 1em 0 1em 2em;
+}
 .btn {
   color: #467fbf;
   background-color: #ffffff;
@@ -26,8 +63,7 @@ body{
   line-height: 1.42857143;
   border-radius: 0;
 
-  display: inline-block;
-  margin-bottom: 0;
+  display: block;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -40,7 +76,7 @@ body{
   user-select: none;
   background-image: none;
   border: 1px solid #467fbf;
-
+  margin: 0 auto;
   transition: all 0.2s ease-out;
 }
 .btn:hover,
@@ -58,22 +94,14 @@ body{
   color: #ffffff;
   background-color: #467fbf;
 }
-
 .contact{
   color: #222;
+  margin: 4em 2em 1em;
 }
-
-
-/* labels */
-.label {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-/* forms.less */
-label {
-  font-weight: normal;
+.contact-form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .form-control {
   -webkit-box-shadow: none;
@@ -88,12 +116,47 @@ label {
 }
 .form-group {
   margin-bottom: 20px;
+  width: 50%;
+}
+.form-group.full{
+  width: 100%;
+}
+.form-group input{
+  width: 100%;
+}
+.form-group .pad-right{
+  padding-right: 1.5em;
+}
+.form-group .pad-left{
+  padding-left: 1.5em;
+}
+.form-group textarea{
+  width: 100%;
+  resize: vertical;
+  min-height: 3em;
+  max-height: 9em;
+  color: #222;
+}
+.form-group label{
+  display: block;
+  width: 100%;
 }
 
-#overlay{
-  background-attachment: inherit;
-}
 
-#wrapper{
-  position: relative;
+@media (max-width:600px) {
+  #header nav a:before{
+    font-size: 1.25em;
+  }
+  #header nav li {
+    width: 3.35em;
+  }
+  .form-group{
+    width: 100%;
+  }
+  .form-group .pad-right{
+    padding: 0;
+  }
+  .form-group .pad-left{
+    padding: 0;
+  }
 }

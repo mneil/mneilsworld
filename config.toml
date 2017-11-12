@@ -29,6 +29,12 @@ languageCode = "en-us"
 
 [[params.social]]
   medium = "Email"
+  icon = "user-o"
+  link = "#about"
+  target = "_self"
+  
+[[params.social]]
+  medium = "Email"
   icon = "envelope-o"
-  link = "/contact"
+  link = "#contact"
   target = "_self"

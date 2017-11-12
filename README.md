@@ -5,5 +5,5 @@
 Run a local server for development that watches for changes with live reload. `http://localhost:1313`
 
 ```
-hugo server -wDs ./ -d dev
+hugo server -wDs ./ -d dev --bind="0.0.0.0"
 ```

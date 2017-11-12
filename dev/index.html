@@ -17,7 +17,7 @@
     
 	</head>
 	<body class="loading">
-		<div id="wrapper">
+		<section id="wrapper">
 			<div id="bg" ></div>
 			<div id="overlay"></div>
 			<div id="main">
@@ -33,58 +33,80 @@
 								
 								<li><a href="https://github.com/mneil" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
 								
-								<li><a href="/contact" class="icon fa-envelope-o" target="_self"><span class="label">Email</span></a></li>
+								<li><a href="#about" class="icon fa-user-o" target="_self"><span class="label">Email</span></a></li>
+								
+								<li><a href="#contact" class="icon fa-envelope-o" target="_self"><span class="label">Email</span></a></li>
 								
 							</ul>
 						</nav>
 					</header>
           
 			</div>
-    </div>
-    <div class="contact">
-      <section>
+    </section>
+    <section class="about">
+      
+<a name="about" id="about"></a>
+<h3>About Me</h3>
+<p>
+  I am currently working in the capacity of Technical Director of Product at 
+  <a href="https://heliosinteractive.com" target="_blank">Helios Interactive</a> in the Portland, OR office. 
+  Below are some highlights of my experience and current skill set. Please <a href="/michael-neil-cv.pdf">see my CV</a> and
+  visit <a href="https://www.linkedin.com/in/mneilsworld/" target="_blank">LinkedIn</a> for more detailed information.
+</p>
+<ul>
+  <li>
+    13 years of experience developing applications
+  </li>
+  <li>
+    Currently a JavaScript developer with some C#, Go, and Python
+  </li>
+  <li>
+    Focus on back-end and microservices
+  </li>
+  <li>
+    Extensive use of AWS
+  </li>
+  <li>
+    Enjoy seeing a team succeed, learn, and grow
+  </li>
+  <li>
+    Bachelor's of Art in Communications and Art with a Minor in Marketing at California State University, Bakersfield      
+  </li>
+</ul>
 
+    </section>
+    <section class="contact">
+      
+<a name="contact" id="contact"></a>
+<h3>Send Me A Message</h3>
+<div id="contact-message"></div>
+
+<form class="contact-form" method="post" action="https://formspree.io/michael@mneilsworld.com">
+  <div class="form-group">
+    <div class="pad-right">
+      <label for="name">Your Name</label>
+      <input type="text" class="form-control" name="name" id="name" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="pad-left">
+      <label for="email">Your Email</label>
+      <input type="text" class="form-control" name="email" id="email" required>
+    </div>
+  </div>
+  <div class="form-group full">
+    <label for="message">Your Message</label>
+    <textarea id="message" class="form-control" name="message" required></textarea>
+  </div>
+  <div class="form-group full">
+    <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i> Send message</button>        
+  </div>
     
+</form>
 
-    <div class="heading">
-        <h3>Contact form</h3>
-    </div>
 
-    <div id="contact-message"></div>
 
-    <form class="contact-form" method="post" action="https://formspree.io/michael@mneilsworld.com">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" class="form-control" name="name" id="name" required>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="text" class="form-control" name="email" id="email" required>
-                </div>
-            </div>
-            <div class="col-sm-12">
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" class="form-control" name="message" required></textarea>
-                </div>
-            </div>
-
-            <div class="col-sm-12 text-center">
-                <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i> Send message</button>
-
-            </div>
-        </div>
-        
-    </form>
-
-    
-
-</section>
-    </div>
+    </section>
 		
 		<script>
 			window.onload = function() { document.body.className = ''; }
@@ -92,7 +114,7 @@
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
 		</script>
 
-    
+    <script src="/js/main.js"></script>
 
 	<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
 </html>

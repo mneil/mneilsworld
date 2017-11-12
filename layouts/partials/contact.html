@@ -1,42 +1,29 @@
-<section>
+{{ if isset .Site.Params "email" }}
+<a name="contact" id="contact"></a>
+<h3>Send Me A Message</h3>
+<div id="contact-message"></div>
 
-    {{ if isset .Site.Params "email" }}
-
-    <div class="heading">
-        <h3>Contact form</h3>
+<form class="contact-form" method="post" action="https://formspree.io/{{ .Site.Params.email }}">
+  <div class="form-group">
+    <div class="pad-right">
+      <label for="name">Your Name</label>
+      <input type="text" class="form-control" name="name" id="name" required>
     </div>
+  </div>
+  <div class="form-group">
+    <div class="pad-left">
+      <label for="email">Your Email</label>
+      <input type="text" class="form-control" name="email" id="email" required>
+    </div>
+  </div>
+  <div class="form-group full">
+    <label for="message">Your Message</label>
+    <textarea id="message" class="form-control" name="message" required></textarea>
+  </div>
+  <div class="form-group full">
+    <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i> Send message</button>        
+  </div>
+    <!-- /.row -->
+</form>
 
-    <div id="contact-message"></div>
-
-    <form class="contact-form" method="post" action="https://formspree.io/{{ .Site.Params.email }}">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" class="form-control" name="name" id="name" required>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="text" class="form-control" name="email" id="email" required>
-                </div>
-            </div>
-            <div class="col-sm-12">
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" class="form-control" name="message" required></textarea>
-                </div>
-            </div>
-
-            <div class="col-sm-12 text-center">
-                <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i> Send message</button>
-
-            </div>
-        </div>
-        <!-- /.row -->
-    </form>
-
-    {{ end }}
-
-</section>
+{{ end }}
