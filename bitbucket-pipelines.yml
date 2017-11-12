@@ -1,0 +1,8 @@
+image: karelbemelmans/pipelines-hugo
+
+pipelines:
+  default:
+    - step:
+        script:
+          - hugo
+          - aws s3 sync --delete public s3://www.mneilsworld.com
