@@ -1,0 +1,114 @@
+partial "top.html" .
+
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Supervisord Docker and Loggly</h1>
+      <time class="post-date" datetime="2017-07-23 16:20:16 &#43;0200">23 Jul 2017</time>
+    </header>
+
+    
+
+<h1 id="supervisord-docker-and-loggly">Supervisord, Docker, and Loggly</h1>
+
+<p>99% of what I need to do can be found on Stack Overflow. But, I had a hard time finding any article that explained how to put together Supervisord and Docker and pipe the logs into Loggly.</p>
+
+<p>This week I had the pleasure of dealing with log aggregation from multiple docker containers. I use Docker quite often. I find that private registries make it easy to distribute images to my team, and my servers. Anything inside of a container typically “just works”. And, Docker images make it easy to both version and deploy code across multiple servers and services. Furthermore, I’ve been using supervisord for a couple years to make sure my processes stay up and that logs are generated and rotated without having to configure log rotate on each machine I deploy to. Supervisord fails to add value to logging though when using multiple containers running the same process (nodejs). Plus it’s not always convenient or possible to ssh into your server to get logs out. This is where a remote logging service like loggly, papertrail,  graylog, or fluentd come in.</p>
+
+<h2 id="setup-remote-logging">Setup Remote Logging</h2>
+
+<p>The first thing to do is setup your remote log server. I’m specifically going to cover loggly — because that’s what I use. But, the majority of this discussion covers any system that can accept logs from syslog. Since I’m already using Docker, and based on the post title and you reading this far I’m assuming you are too, I followed this help article from Loggly. I’ll repeat the instructions below in case that link becomes invalid.</p>
+
+<h3 id="run-the-loggly-image">Run the loggly image</h3>
+
+<pre><code>docker run -d -p 514/udp --name loggly-docker -e TOKEN=TOKEN -e TAG=Docker sendgridlabs/loggly-docker
+</code></pre>
+
+<p>Here we&rsquo;re exposing port 514 for udp messages to syslog. Give the container a name, and tag the container for loggly. Also important to note is that you must replace =TOKEN with a customer token from your loggly account.</p>
+
+<h3 id="test-it-out">Test it out</h3>
+
+<p>This container makes sending messages to Loggly a snap. If you want to test it out you need to find out the host port that is mapped to 514 in the container. You can do that by inspecting the docker process with:</p>
+
+<pre><code>docker ps -a
+</code></pre>
+
+<p>Then run the following and replace UDP_PORT with your port #</p>
+
+<pre><code>echo netcat:&quot;Host test log&quot; | nc -u -w 1 127.0.0.1 UDP_PORT
+</code></pre>
+
+<p>You should see “Host test log” in your Loggly account.</p>
+
+<h3 id="link-your-container">Link your container</h3>
+
+<p>How linking containers works has changed in Docker. Environment variables use to be how it was done. Now, Docker will add an entry into the hosts file based on your container name. The Loggly instructions explain the old way. I’m going to use the current, preferred, Docker way. Run your container with a link.</p>
+
+<p>docker run &ndash;name nginx &ndash;link loggly-docker:loggly nginx
+The above example is for the nginx image. And this is the same image the Loggly docs use. You really just need to add the –link loggly-docker:loggly part to any container you want to run and send logs to Loggly with.</p>
+
+<p>If you want to test it out from the container to better understand how this will all come together do the following.</p>
+
+<h4 id="exec-into-the-container">Exec into the container</h4>
+
+<pre><code>docker exec -it nginx /bin/bash
+</code></pre>
+
+<p>Send the same test log to Loggly from the container</p>
+
+<pre><code>echo netcat:&quot;Hello from NGINX container&quot; | nc -u -w 1 loggly 514
+</code></pre>
+
+<p>You should see &ldquo;Hello from NGINX container&rdquo; in your Loggly logs.</p>
+
+<h2 id="update-your-supervisord-config">Update your Supervisord Config</h2>
+
+<p>Now that we have our logging container setup we’re ready to pipe all of our logs to it. But first, a quick disclaimer. Supervisord cannot currently send logs to a remote syslog. Because of this, we’ll have to use a plugin. I’ve chosen to use supervisor-logging because it’s the first one I found and also the only one. For now we’re not going to worry about that though. We’ll cover this in the Dockerfile updates. This was is my typical supervisord program setup</p>
+
+<pre><code>[program:api]
+command=/node/bin/node /src/server/server.js
+environment=
+autostart=true
+startretries=10
+autorestart=true
+redirect_stderr=true
+stdout_logfile=syslog
+stdout_logfile=/var/log/supervisor/api.log
+stdout_logfile_maxbytes=5MB
+stdout_logfile_backups=5
+Here I’m redirecting stderr to stdout and sending all the logs to a file at /var/log/supervisr/api.log. We want to change this to send all the logs to syslog. We can do that by changing our config to this:
+
+[program:api]
+command=/node/bin/node /src/server/server.js
+environment=
+autostart=true
+startretries=10
+autorestart=true
+stdout_events_enabled=true
+stderr_events_enabled=true
+Those last two lines are what tells supervisor to send events for stdout and stderr. We also need to add a new event section to our config.
+
+[eventlistener:logging]
+command=supervisor_logging
+events=PROCESS_LOG
+</code></pre>
+
+<p>You do not need to change either of those lines under the listener. For more info on what is happening here you’ll want to refer to the supervisord docs.</p>
+
+<h2 id="update-your-dockerfile">Update your Dockerfile</h2>
+
+<p>The Supervisord logging plugin relies on 3 environment variables being set. You can set those in your Dockerfile. I placed mine towards the bottom — just before my CMD argument.</p>
+
+<pre><code>ENV SYSLOG_SERVER=loggly
+ENV SYSLOG_PORT=514
+ENV SYSLOG_PROTO=udp
+</code></pre>
+
+<p>Remember earlier when we linked the Loggly container to our nginx container? That added an entry in our hosts file which maps “loggly” to the IP of the Loggly container. The port is 514 and the protocol is udp. We configured that when we ran the Loggly container. Linking the container also set these values in environment variables with different names in our container. However, I found it difficult to copy those values to new environment variables when starting my container. So setting the port and protocol in the Dockerfile felt reasonable since I will only ever need 1 Loggly container running and I can always make sure that 514 is available and udp is my preferred protocol for sending because it’s lightweight.</p>
+
+<p>At this point you need to rebuild your image and re-run your container with the link to the Loggly container set. Now any data in your application that writes to stdout or stderr will get captured by Supervisord, sent to supervisor-logging as an event, piped to the Loggly container, and finally sent by syslog to Loggly.</p>
+
+
+  </article>
+
+  partial "bottom.html" .
+  

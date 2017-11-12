@@ -142,6 +142,10 @@ ul{
   width: 100%;
 }
 
+.posts{
+  color: #222;
+}
+
 
 @media (max-width:600px) {
   #header nav a:before{

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://localhost:1313/post/supervisord-docker-and-loggly/</loc>
+    <lastmod>2017-07-23T16:20:16+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/contact/</loc>
   </url>
   
@@ -11,6 +16,13 @@
   
   <url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2017-07-23T16:20:16+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2017-07-23T16:20:16+02:00</lastmod>
     <priority>0</priority>
   </url>
   

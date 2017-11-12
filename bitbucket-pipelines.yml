@@ -5,4 +5,5 @@ pipelines:
     - step:
         script:
           - hugo
-          - aws s3 sync --delete public s3://www.mneilsworld.com
+          - aws s3 sync --delete public s3://www.mneilsworld.com --exclude "index.html"
+          - aws s3 cp public/index.html s3://www.mneilsworld.com/index.html --cache-control "max-age=0"
