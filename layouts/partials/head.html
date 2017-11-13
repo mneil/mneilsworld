@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{{ .Title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="css/extra.css">    
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+    {{ with .Site.Params.favicon }}
+     <link rel="shortcut icon" type="image/x-icon" href="{{ . | absURL }}">
+     <link rel="icon" type="image/x-icon" href="{{ . | absURL }}">
+    {{ end }}
+	</head>
+	<body>
+      {{ if .IsHome -}}
+      <header class="site-header">
+        <h1>{{ .Site.Title }}</h1>
+        <p>{{ .Site.Params.tagline }}</p>
+      </header>
+      {{- else -}}
+      <nav class="site-nav">
+        <a href="{{ .Site.BaseURL }}">Index</a>
+      </nav>
+      {{- end }}
