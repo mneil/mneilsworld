@@ -1,5 +1,5 @@
 ---
-title: "AIR3 In Flash CS5 For iOS / Android"
+title: "Sending Emails That Don't Suck With WordPress"
 description: "Description of the post"
 date: 2011-01-25T16:31:56+00:00
 draft: false

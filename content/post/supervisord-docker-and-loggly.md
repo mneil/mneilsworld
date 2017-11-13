@@ -1,7 +1,7 @@
 ---
 title: "Supervisord Docker and Loggly"
 description: "Description of the post"
-date: 2017-07-23T16:20:16+02:00
+date: 2016-07-10T19:56:03+00:00
 draft: false
 ---
 

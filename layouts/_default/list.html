@@ -1,18 +1,19 @@
 {{ partial "head.html" . }}
 
-{{ range (where .Data.Pages "Type" "post").GroupByDate "2006" -}}
-<section>
-  <h2>{{ .Key }}</h2>
+<section class="posts">
+  {{ range (where .Data.Pages "Type" "post").GroupByDate "2006" -}}
+  <section class="post">
+    <h2>{{ .Key }}</h2>
 
-  <ol>
-    {{ range .Pages -}}
-    <li>
-      <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </li>
-    {{- end }}
-  </ol>
+    <ol>
+      {{ range .Pages -}}
+      <li>
+        <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{- end }}
+    </ol>
+  </section>
+  {{ end }}
 </section>
-{{ end }}
-
 {{ partial "foot.html" . }}

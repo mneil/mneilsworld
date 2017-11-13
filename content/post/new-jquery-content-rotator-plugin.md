@@ -1,5 +1,5 @@
 ---
-title: "AIR3 In Flash CS5 For iOS / Android"
+title: "New jQuery Content Rotator Plugin"
 description: "Description of the post"
 date: 2011-02-12T18:11:26+00:00
 draft: false
