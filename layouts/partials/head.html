@@ -17,15 +17,19 @@
 	<body class="blog">
 
     <nav class="site-nav">
-      <a href="{{ .Site.BaseURL }}">Home</a>
-      <a href="/posts">Work</a>
-      <a href="/#contact">Contact</a>
+      <div class="content">
+          <a href="{{ .Site.BaseURL }}">Home</a>
+          <a href="/posts">Work</a>
+          <a href="/#contact">Contact</a>
+      </div>
     </nav>
 
     <div class="container">
     {{ if eq .Title "Posts" }}
 
-    <h1>All Posts</h1>
+    <div class="content">
+      <h2 class="title"><span>All Posts</span></h2>      
+    </div>
 
     {{- else -}}
     

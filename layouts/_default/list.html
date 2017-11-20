@@ -1,9 +1,9 @@
 {{ partial "head.html" . }}
 
-<section class="posts">
+<section class="posts content">
   {{ range (where .Data.Pages "Type" "post").GroupByDate "2006" -}}
   <section class="post">
-    <h2>{{ .Key }}</h2>
+    <h3>{{ .Key }}</h3>
 
     <ol>
       {{ range .Pages -}}
