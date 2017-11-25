@@ -1,3 +1,20 @@
-</div> <!-- End .container -->
+    {{ if eq .Title "Posts" }}
+
+    {{- else -}}
+    
+    <section class="post-navigation content">
+
+      {{ if .Prev }}
+        <a href="{{ .Prev.Permalink}}">Previous</a>
+      {{- end}}
+      {{ if .Next}}
+        <a href="{{ .Next.Permalink }}">Next</a>
+      {{- end}}
+    </section>
+  
+
+    {{- end}}
+    
+  </div> <!-- End .container -->
 </body>
 </html>

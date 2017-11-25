@@ -5,8 +5,6 @@ date: 2016-07-10T19:56:03+00:00
 draft: false
 ---
 
-# Supervisord, Docker, and Loggly
-
 99% of what I need to do can be found on Stack Overflow. But, I had a hard time finding any article that explained how to put together Supervisord and Docker and pipe the logs into Loggly.
 
 This week I had the pleasure of dealing with log aggregation from multiple docker containers. I use Docker quite often. I find that private registries make it easy to distribute images to my team, and my servers. Anything inside of a container typically “just works”. And, Docker images make it easy to both version and deploy code across multiple servers and services. Furthermore, I’ve been using supervisord for a couple years to make sure my processes stay up and that logs are generated and rotated without having to configure log rotate on each machine I deploy to. Supervisord fails to add value to logging though when using multiple containers running the same process (nodejs). Plus it’s not always convenient or possible to ssh into your server to get logs out. This is where a remote logging service like loggly, papertrail,  graylog, or fluentd come in.

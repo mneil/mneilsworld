@@ -19,23 +19,9 @@
     <nav class="site-nav">
       <div class="content">
           <a href="{{ .Site.BaseURL }}">Home</a>
-          <a href="/posts">Work</a>
+          <a href="/post">Posts</a>
           <a href="/#contact">Contact</a>
       </div>
     </nav>
 
     <div class="container">
-    {{ if eq .Title "Posts" }}
-
-    <div class="content">
-      <h2 class="title"><span>All Posts</span></h2>      
-    </div>
-
-    {{- else -}}
-    
-    <a href="{{ .Prev.Permalink }}">Previous</a>
-    <a href="{{ .Next.Permalink }}">Next</a>
-      
-
-    {{- end}}
-    
