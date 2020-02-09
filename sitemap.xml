@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.mneilsworld.com/post/devops-on-aws-radio-automating-aws-iot-episode-25/</loc>
+    <lastmod>2019-08-06T16:59:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/post/getting-started-with-aws-iot-platform/</loc>
+    <lastmod>2019-04-30T16:59:41+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.mneilsworld.com/post/supervisord-docker-and-loggly/</loc>
     <lastmod>2016-07-10T19:56:03+00:00</lastmod>
   </url>
@@ -82,13 +92,13 @@
   
   <url>
     <loc>https://www.mneilsworld.com/</loc>
-    <lastmod>2016-07-10T19:56:03+00:00</lastmod>
+    <lastmod>2019-08-06T16:59:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.mneilsworld.com/post/</loc>
-    <lastmod>2016-07-10T19:56:03+00:00</lastmod>
+    <lastmod>2019-08-06T16:59:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   

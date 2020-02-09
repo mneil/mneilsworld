@@ -6,10 +6,28 @@
     <description>Recent content on Michael Neil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Jul 2016 19:56:03 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 16:59:41 +0000</lastBuildDate>
     
 	<atom:link href="https://www.mneilsworld.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DevOps on AWS Radio: Automating AWS IoT</title>
+      <link>https://www.mneilsworld.com/post/devops-on-aws-radio-automating-aws-iot-episode-25/</link>
+      <pubDate>Tue, 06 Aug 2019 16:59:41 +0000</pubDate>
+      
+      <guid>https://www.mneilsworld.com/post/devops-on-aws-radio-automating-aws-iot-episode-25/</guid>
+      <description>Read the post on the Stelligent Blog.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started With The AWS IoT Platform</title>
+      <link>https://www.mneilsworld.com/post/getting-started-with-aws-iot-platform/</link>
+      <pubDate>Tue, 30 Apr 2019 16:59:41 +0000</pubDate>
+      
+      <guid>https://www.mneilsworld.com/post/getting-started-with-aws-iot-platform/</guid>
+      <description>Read the post on the Stelligent Blog.</description>
+    </item>
     
     <item>
       <title>Supervisord Docker and Loggly</title>
