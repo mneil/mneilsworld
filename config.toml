@@ -5,12 +5,12 @@ languageCode = "en-us"
 
 [params]
   name = "Michael Neil"
-  about = "Full Stack Developer &nbsp;&bull;&nbsp; Technical Director"
+  about = "DevOps Engineer &nbsp;&bull;&nbsp; Technical Director &nbsp;&bull;&nbsp; Full Stack Developer"
   copyright = "Michael Neil"
   #Disable the scrolling background by entering any string for bg_scroll. Enable by leaving bg_scroll empty.
   bg_scroll = ""
   favicon = "favicon.ico"
-  email = "michael@mneilsworld.com"
+  email = "mneilsworld+website@gmail.com"
   latitude = "45.6188384"
   longitude = "-122.3652182"
   googleMapsApiKey = "AIzaSyCZbUcNSTY6pFn3rqxjFutWvUfTtB_KL1o"
@@ -32,7 +32,7 @@ languageCode = "en-us"
   icon = "user-o"
   link = "#about"
   target = "_self"
-  
+
 [[params.social]]
   medium = "Email"
   icon = "envelope-o"
