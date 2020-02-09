@@ -1,31 +1,99 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mneil.github.io/mneilsworld//#intro</loc>
+    <loc>https://www.mneilsworld.com/post/supervisord-docker-and-loggly/</loc>
+    <lastmod>2016-07-10T19:56:03+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mneil.github.io/mneilsworld//#work</loc>
+    <loc>https://www.mneilsworld.com/post/mncombine-wp-plugin-release/</loc>
+    <lastmod>2013-05-29T23:18:04+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mneil.github.io/mneilsworld//#about</loc>
+    <loc>https://www.mneilsworld.com/post/dealing-with-credit-card-gateways/</loc>
+    <lastmod>2012-10-16T22:25:22+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mneil.github.io/mneilsworld//#</loc>
+    <loc>https://www.mneilsworld.com/post/stripe-credit-card-processing/</loc>
+    <lastmod>2011-11-19T06:34:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/post/php-chop-string-on-whole-word/</loc>
+    <lastmod>2011-08-09T00:24:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/post/editor-of-choice/</loc>
+    <lastmod>2011-05-11T14:34:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/post/new-jquery-content-rotator-plugin/</loc>
+    <lastmod>2011-02-12T18:11:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/post/mobile-framework-roundup/</loc>
+    <lastmod>2011-01-25T16:31:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/post/password-protecting-html-files/</loc>
+    <lastmod>2011-01-25T16:31:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/post/sending-email-that-dont-suck-with-wordpress/</loc>
+    <lastmod>2011-01-25T16:31:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/post/understanding-variable-scope/</loc>
+    <lastmod>2011-01-25T16:31:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/post/air3-in-flash-cs5-for-ios-android/</loc>
+    <lastmod>2010-08-06T16:59:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/post/as3-remoting-class-amfphp/</loc>
+    <lastmod>2010-08-06T16:59:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://mneil.github.io/mneilsworld//#</loc>
+    <loc>https://www.mneilsworld.com/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/</loc>
+    <lastmod>2016-07-10T19:56:03+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://mneil.github.io/mneilsworld//#</loc>
+    <loc>https://www.mneilsworld.com/post/</loc>
+    <lastmod>2016-07-10T19:56:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mneilsworld.com/tags/</loc>
     <priority>0</priority>
   </url>
   

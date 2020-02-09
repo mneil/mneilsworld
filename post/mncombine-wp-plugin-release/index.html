@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>MnCombine WP Plugin Release</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="stylesheet" href="/css/main.css" />    
+    <link rel="stylesheet" href="/css/extra.css">    
+		
+		
+    
+     <link rel="shortcut icon" type="image/x-icon" href="https://www.mneilsworld.com/favicon.ico">
+     <link rel="icon" type="image/x-icon" href="https://www.mneilsworld.com/favicon.ico">
+    
+	</head>
+	<body class="blog">
+
+    <nav class="site-nav">
+      <div class="content">
+          <a href="https://www.mneilsworld.com">Home</a>
+          <a href="/post">Posts</a>
+          <a href="/#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="container">
+
+  <article class="post content">
+    <header class="post-header">
+      <h1 class="post-title">MnCombine WP Plugin Release</h1>
+      <time class="post-date" datetime="2013-05-29 23:18:04 UTC">29 May 2013</time>
+    </header>
+
+    
+
+<h1 id="mncombine-wp-plugin-release">MnCombine WP Plugin Release</h1>
+
+<p>MnCombine Asset Management Plugin!</p>
+
+<p>I’ll cut to the chase. I love the WordPress community and there are plenty of cache/asset management/css compressors/javascript compilers out there. So why the $#!! would I write another one? Simple, because this one is obviously the best! I use the same technique all the time to management my javascript and css files. Monitor changes to the file on request, hash the files needed along with the times they were updated, look for a file if it exists or generate a new one then load it. Whether it’s with Stylus for Node, Asset Packager for Ruby, Cake or WordPress for PHP, or Webassets for Flask in Python it just makes sense to handle assets this way.</p>
+
+<p>So I’ve packages up one of my libraries and gave it a nice interface in WordPress so others can use and enjoy it. This plugin gives you much greater control than WP Super Cache (which works well in tandem with this plugin) or wp minify does by allowing you to decide which assets to combine and optionally compress. You can try it out by searching mncombine in your admin plugins &gt; add new screen or downloading it directly.</p>
+
+<p>What is does</p>
+
+<p>Finds all possible .js and .css files from a WP install available and allows you to combine and/or compress the files to reduce load time. The plugin can monitor file changes in “development” mode (by hashing file mtime) which allows the plugin to recompile the files when a file changes. Or, it can cache the files in “production” mode so that files are only recompiled if they are not found or are deleted manually from the cache folder. Additionally, this plugin will allow you to force the inclusion of javascript files into either the head or the foot of the page.</p>
+
+<p>There are two modes, development and production, the ability to force the files to print in the header or footer*, the use of Google Closure as a JS compiler, and finally the ability to pick and choose which files, including dependencies, should be combined.</p>
+
+<p>*forcing head compiles can fail on JS files queued after the call to wp_head(). The plugin will, in this case, render the late queued files in the footer as originally intended.</p>
+
+
+  </article>
+
+    <section class="post-navigation content">
+
+      
+        <a href="https://www.mneilsworld.com/post/supervisord-docker-and-loggly/">Previous</a>
+      
+        <a href="https://www.mneilsworld.com/post/dealing-with-credit-card-gateways/">Next</a>
+    </section>
+    
+  </div> 
+</body>
+</html>
+  

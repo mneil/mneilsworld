@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Chop A String On a Whole Word With PHP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="stylesheet" href="/css/main.css" />    
+    <link rel="stylesheet" href="/css/extra.css">    
+		
+		
+    
+     <link rel="shortcut icon" type="image/x-icon" href="https://www.mneilsworld.com/favicon.ico">
+     <link rel="icon" type="image/x-icon" href="https://www.mneilsworld.com/favicon.ico">
+    
+	</head>
+	<body class="blog">
+
+    <nav class="site-nav">
+      <div class="content">
+          <a href="https://www.mneilsworld.com">Home</a>
+          <a href="/post">Posts</a>
+          <a href="/#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="container">
+
+  <article class="post content">
+    <header class="post-header">
+      <h1 class="post-title">Chop A String On a Whole Word With PHP</h1>
+      <time class="post-date" datetime="2011-08-09 00:24:24 UTC">09 Aug 2011</time>
+    </header>
+
+    
+
+<h1 id="chop-a-string-on-a-whole-word-with-php">Chop A String On a Whole Word With PHP</h1>
+
+<p>1 Comment
+I’ve been slacking an not writing anything so I’m going to start trying to write much smaller posts starting with this one. A common need for template developers is chopping a string at a whole word. There’s a lot of functions out there on the web to tackle this problem and I went searching for one quickly today rather than just writing one. What I found was a bunch of functions that either a) didn’t work or b) didn’t work well enough. So most of the time you want to chop a string down to 35 characters or so right? For instance, you want to display a post title but you want it to display only on one line but some of the titles are going to break that line.</p>
+
+<p>This function breaks a string on a whole word and makes sure that the string doesn’t go over the set amount of characters you set. This means you always get a string that fits where you want it to; ALWAYS.</p>
+
+<p>function neat_trim($str, $n, $delim=&lsquo;.&rsquo;) {
+  $len = strlen($str);
+   if ($len &gt; $n) {
+        preg_match(&lsquo;/(.{&rsquo;.$n.&lsquo;}).*?\b/&lsquo;, $str, $matches);
+        if(strlen( trim( $matches[0] ) ) &gt; $n)
+            return substr( $matches[0],0, strrpos( trim( $matches[0] ),&rdquo; &ldquo;) ) . $delim;
+        else
+            return $matches[0] . $delim;
+   }else {
+       return $str;
+   }
+}
+It’s pretty straightforward I hope. You pass the string, the maximum characters your string can be, and a delimiter to display at the end of the string if you chop it. By default it displays … but if you don’t want anything just pass an empty string. I didn’t do all this myself (not that there’s much there). This is based off a broken example I found on the web. The word boundary in the regular expression was mis-used in the example I found so I fixed it, then made it so that the string never goes over n characters. The original would chop it at the next whole word it found which meant our string could be anywhere between n characters and n*E-10. You get the picture. I’m not a math wizard so that’s probably wrong ha ha. I mean what if you wanted to catch 30 characters on one line and the string you chopped was:</p>
+
+<p>“this is my string of existentialism”</p>
+
+<p>My function returns “this is my string of…” whereas most return “this is my string of existentialism” which can completely ruin a layout. Anyway, no need to beat this dead horse back to life. I hope this helps people. If you have a better, cooler, faster, shorter (or longer) way of doing this post it in the comments!</p>
+
+
+  </article>
+
+    <section class="post-navigation content">
+
+      
+        <a href="https://www.mneilsworld.com/post/stripe-credit-card-processing/">Previous</a>
+      
+        <a href="https://www.mneilsworld.com/post/editor-of-choice/">Next</a>
+    </section>
+    
+  </div> 
+</body>
+</html>
+  

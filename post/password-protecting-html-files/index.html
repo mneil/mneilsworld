@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Password Protecting HTML Files</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="stylesheet" href="/css/main.css" />    
+    <link rel="stylesheet" href="/css/extra.css">    
+		
+		
+    
+     <link rel="shortcut icon" type="image/x-icon" href="https://www.mneilsworld.com/favicon.ico">
+     <link rel="icon" type="image/x-icon" href="https://www.mneilsworld.com/favicon.ico">
+    
+	</head>
+	<body class="blog">
+
+    <nav class="site-nav">
+      <div class="content">
+          <a href="https://www.mneilsworld.com">Home</a>
+          <a href="/post">Posts</a>
+          <a href="/#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="container">
+
+  <article class="post content">
+    <header class="post-header">
+      <h1 class="post-title">Password Protecting HTML Files</h1>
+      <time class="post-date" datetime="2011-01-25 16:31:56 UTC">25 Jan 2011</time>
+    </header>
+
+    
+
+<h1 id="password-protecting-html-files">Password Protecting HTML Files</h1>
+
+<p>The other day I was doing some work on a back-end system for a client and ran into the problem of having a ton of html files that needed to be accessible only by administrators. Why would I have a bunch of html files you ask? For practical reasons you may have any number of files you don.t want displayed on the web to just anyone. I happened to have a large library of code documented with ASDoc. Anyone who has used, or is interested in using ASDoc knows it creates a large number of html files. My particular project has been one spanning several years and consists of thousands of lines of code and a hundred or more classes across dozens of packages. But, that.s sort of irrelevant. What is important is that I had a hundred or so html files I suddenly needed to protect online.</p>
+
+<p>What I used:</p>
+
+<p>.htaccess
+php
+Yeah, I know that.s not a big list. But it.s all you need. If you already have a back-end system put together this is a fairly easy thing to implement. Here is the code for the .htaccess file:</p>
+
+<p><IfModule mod_rewrite.c></p>
+
+<p>Options +FollowSymlinks
+RewriteEngine On</p>
+
+<p>RewriteRule !.(js|ico|txt|gif|jpg|png|css|swf|pdf)$ index.php</p>
+
+<p></IfModule>
+Okay, fairly simple I hope. Basically this says rewrite anything in this directory that isn.t a javascript file, an icon, a text document. and so on and so forth to index.php. This means any requests made for files in this directory or sub-directories should be redirected to the index.php file. You can add files to exclude or include as well. These were just the ones I didn.t want redirected. This is really the basis of a bootstrap configuration and one I use quite often!</p>
+
+<p>The index.php file is really pretty simple. And here is it:</p>
+
+<p>&lt;?php
+session_start();
+if( !$_SESSION[&lsquo;test&rsquo;] ){
+header(&ldquo;Location: ../&ldquo;);
+exit;
+}</p>
+
+<p>$url=strip_tags($_SERVER[&ldquo;REQUEST_URI&rdquo;]);
+$url_array=explode(&ldquo;/&rdquo;,$url);
+array_shift($url_array); //the first one is empty anyway</p>
+
+<p>if($url_array[0] == &ldquo;my-admin&rdquo;)
+array_shift($url_array);
+if($url_array[0] == &ldquo;ASDoc&rdquo;)
+array_shift($url_array);</p>
+
+<p>if($url_array[0] != &ldquo;&rdquo;){
+echo file_get_contents($url_array[0]);
+exit;
+}
+?&gt;
+Hopefully that looks simple enough. Obviously right off the bat you.ll notice I.m starting a session and checking a session variable I.ve named test. This means you.ll have had to authenticated the user somewhere else and set the session variable test to true. If the user isn.t authenticated you can see that we.re throwing them back to the the subfolder; effectively kicking them out of our back-end system.</p>
+
+<p>The next part is a little less explanatory simply because there are a dozen ways to do this. The way I.m handling requests and know what files to look for is all based on the REQUEST_URI. What I did here was split the the URL into an array, then with a couple of if statements I threw away the first values in the array until I got to the folder I.m working with. In the above example assume the html file we.re requesting are at <a href="http://www.test.com/my-admin/ASDoc/test.html">http://www.test.com/my-admin/ASDoc/test.html</a>. The if($url_array[0] == .my-admin.)array_shift($url_array); gets rid of the value my-admin in the url_array variable. Then next line takes out ASDoc. Everything after that that is left in $url_array is a request for a page in the relevant folder. Hopefully that makes sense.</p>
+
+<p>Next we.re just checking that the request wasn.t for the index and if not we.re going to grab the contents of the file at $url_array[0]; and echo them out. You don.t necessarily want to check that that the request isn.t for the index though. For instance, you could check that it is the index they are requesting and then serve a login page. Anyway, there are endless possibilities with this and protecting html files is just one of them.</p>
+
+
+  </article>
+
+    <section class="post-navigation content">
+
+      
+        <a href="https://www.mneilsworld.com/post/mobile-framework-roundup/">Previous</a>
+      
+        <a href="https://www.mneilsworld.com/post/sending-email-that-dont-suck-with-wordpress/">Next</a>
+    </section>
+    
+  </div> 
+</body>
+</html>
+  
