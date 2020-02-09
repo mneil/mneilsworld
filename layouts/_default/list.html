@@ -4,7 +4,6 @@
   {{ range (where .Data.Pages "Type" "post").GroupByDate "2006" -}}
   <section class="post">
     <p>{{ .Key }}</p>
-
     <ol>
       {{ range .Pages -}}
       <li>

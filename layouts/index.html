@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/extra.css">    
+    <link rel="stylesheet" href="css/extra.css">
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
     {{ with .Site.Params.favicon }}
@@ -36,8 +36,13 @@
 								{{ end }}
 							</ul>
 						</nav>
-					</header>
-          
+          </header>
+
+          <!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; {{ .Site.Params.copyright }}. Design: <a href="http://html5up.net">HTML5 UP</a>. Powered by <a href="https://www.gohugo.io/">Hugo.</a></span>
+					</footer>
+
 			</div>
     </section>
     <section class="about content">
@@ -46,6 +51,7 @@
     <section class="contact content">
       {{ partial "contact.html" . }}
     </section>
+
 		<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
 		<script>
 			window.onload = function() { document.body.className = ''; }
