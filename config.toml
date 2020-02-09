@@ -11,9 +11,7 @@ languageCode = "en-us"
   bg_scroll = ""
   favicon = "favicon.ico"
   email = "mneilsworld+website@gmail.com"
-  latitude = "45.6188384"
-  longitude = "-122.3652182"
-  googleMapsApiKey = "AIzaSyCZbUcNSTY6pFn3rqxjFutWvUfTtB_KL1o"
+
 
 [[params.social]]
   medium = "LinkedIn"
