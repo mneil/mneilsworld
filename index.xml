@@ -1,63 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Michael Neil</title>
-    <link>https://www.mneilsworld.com/</link>
+    <link>https://mneil.github.io/mneilsworld/</link>
     <description>Recent content on Michael Neil</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://www.mneilsworld.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mneil.github.io/mneilsworld/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Intro</title>
-      <link>https://www.mneilsworld.com/intro/</link>
+      <link>https://mneil.github.io/mneilsworld/intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mneilsworld.com/intro/</guid>
+      <guid>https://mneil.github.io/mneilsworld/intro/</guid>
       <description>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my awesome work.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</description>
     </item>
     
     <item>
       <title>Work</title>
-      <link>https://www.mneilsworld.com/work/</link>
+      <link>https://mneil.github.io/mneilsworld/work/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mneilsworld.com/work/</guid>
+      <guid>https://mneil.github.io/mneilsworld/work/</guid>
       <description>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
 Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://www.mneilsworld.com/about/</link>
+      <link>https://mneil.github.io/mneilsworld/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mneilsworld.com/about/</guid>
+      <guid>https://mneil.github.io/mneilsworld/about/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</description>
-    </item>
-    
-    <item>
-      <title>Elements</title>
-      <link>https://www.mneilsworld.com/elements/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mneilsworld.com/elements/</guid>
-      <description>{‌{&amp;lt; socialLinks &amp;gt;}}will get into github linkedin facebook  configured in config.toml.
-{‌{&amp;lt; gmaps pb=&amp;rdquo;&amp;lt;sharecode&amp;gt;&amp;rdquo; &amp;gt;}}will get a google map 
-To get the pb parameter value, search the desired place on google maps and click the share button and copy/paste the pb parameter out of the iframe code.
-This is bold and this is strong. This is italic and this is emphasized. This is superscripttext and this is subscripttext. This is underlinedand this is code: for (;;) { &amp;hellip; }.</description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>https://www.mneilsworld.com/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.mneilsworld.com/contact/</guid>
-      <description>github linkedin facebook  </description>
     </item>
     
   </channel>

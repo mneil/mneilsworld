@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mneilsworld.com/sitemap.xml
+Sitemap: https://mneil.github.io/mneilsworld//sitemap.xml
