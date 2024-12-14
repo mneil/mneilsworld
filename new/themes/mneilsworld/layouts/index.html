@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{{ .Title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/vhs.css" />
+		<script src="/js/splitting.js" defer></script>
+    {{ with .Site.Params.favicon }}
+     <link rel="shortcut icon" type="image/x-icon" href="{{ . | absURL }}">
+     <link rel="icon" type="image/x-icon" href="{{ . | absURL }}">
+    {{ end }}
+	</head>
+	<body class="loading">
+		<!-- partial:index.partial.html -->
+		<div class="scanlines"></div>
+
+		<div class="intro-wrap">
+			<div class="noise"></div>
+			<div class="noise noise-moving"></div>
+
+			<div class="play interface" data-splitting>PLAY</div>
+			<div class="time interface">--:--</div>
+			<div class="recordSpeed interface">SLP 0:00:00</div>
+			<div class="eject">
+				<div>
+					<svg
+						width="30mm"
+						height="28.000004mm"
+						viewBox="0 0 30 28"
+						version="1.1"
+						id="svg1"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:svg="http://www.w3.org/2000/svg">
+						<defs
+							id="defs1" />
+						<g
+							id="layer1"
+							transform="translate(-40,-72.000002)">
+							<path
+								style="opacity:1;fill:#ffffff;stroke:none;"
+								d="m 151.32085,338.1705 v -9.01892 l 28.28427,-28.27764 28.28427,-28.27765 28.28427,28.27765 28.28428,28.27764 v 9.01892 9.01893 h -56.56855 -56.56854 z"
+								id="path4"
+								transform="scale(0.26458333)" />
+							<path
+								style="fill:#ffffff;stroke:none"
+								d="m 151.32085,368.40263 v -9.19239 h 56.56854 56.56855 v 9.19239 9.19239 h -56.56855 -56.56854 z"
+								id="path5"
+								transform="scale(0.26458333)" />
+						</g>
+						</svg>
+					EJECT
+				</div>
+		</div>
+
+			<section id="home" class="content home">
+				<h1>{{ .Site.Params.name | safeHTML }}</h1>
+				<div class="roles">
+					{{ .Site.Params.about | safeHTML }}
+				</div>
+				<nav>
+					<ul>
+						{{ range .Site.Params.social }}
+						<li><a href="{{ .link | safeURL }}" class="icon fa-{{ .icon }}" target="{{ .target }}"><span class="label">{{ .medium }}</span></a></li>
+						{{ end }}
+					</ul>
+				</nav>
+			</section>
+			<section id="about" class="content about hidden">
+				{{ partial "about.html" . }}
+			</section>
+			<section id="contact" class="content contact hidden">
+				{{ partial "contact.html" . }}
+			</section>
+
+
+		</div>
+		<!-- partial -->
+
+    {{ partial "js.html" . }}
+
+	</body>
+</html>

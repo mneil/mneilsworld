@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/spf13/hugoThemes#themetoml for an example
+
+name = "Mneilsworld"
+license = "Creative Commons Attribution 3.0 Unported"
+licenselink = "https://github.com/mneil/mneilsworld/blob/master/themes/mneilsworld/LICENSE.md"
+description = "Theme for Mneilsworld.com"
+homepage = "https://github.com/mneil/mneilsworld"
+tags = ["responsive", "personal"]
+features = ["responsive"]
+min_version = 0.139
+
+[author]
+  name = "Michael Neil"
+  homepage = "https://www.mneilsworld.com/"

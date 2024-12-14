@@ -1,0 +1,38 @@
+baseurl = "https://www.mneilsworld.com"
+title = "Michael Neil"
+theme = "mneilsworld"
+languageCode = "en-us"
+
+[params]
+  name = "Michael Neil"
+  about = "<ul role='list'><li>Security Engineer</li><li>DevOps Engineer</li><li>Technical Director</li></ul>"
+  copyright = "Michael Neil"
+  #Disable the scrolling background by entering any string for bg_scroll. Enable by leaving bg_scroll empty.
+  bg_scroll = ""
+  favicon = "favicon.ico"
+  email = "mneilsworld+website@gmail.com"
+
+
+[[params.social]]
+  medium = "LinkedIn"
+  icon = "linkedin"
+  link = "https://www.linkedin.com/in/mneilsworld/"
+  target = "_blank"
+
+[[params.social]]
+  medium = "Github"
+  icon = "github"
+  link = "https://github.com/mneil"
+  target = "_blank"
+
+[[params.social]]
+  medium = "Email"
+  icon = "envelope-o"
+  link = "#contact"
+  target = "_self"
+
+[[params.social]]
+  medium = "Email"
+  icon = "user-o"
+  link = "#about"
+  target = "_self"
